@@ -12,22 +12,19 @@ public class ExchangeConfiguration {
   private static final String AUTH_SCHEMA_HEADER = "Auth-Schema";
   private static final String API_KEY_HEADER = "Api-Key";
 
-  private static final String baseUrl = "https://sandbox.platfr.io";
-  private static final String authSchema = "S2S";
-  private static final String apiKey = "FXOVVXXHVCPVPBZXIJOBGUGSKHDNFRRQJP";
-
   @Bean
-  public ApiExchange apiExchange() {
-    return HttpServiceProxyFactory.builderFor(RestClientAdapter.create(buildRestClient()))
+  public ApiExchange apiExchange(ApiProperties apiProperties) {
+    var restClient = buildRestClient(apiProperties);
+    return HttpServiceProxyFactory.builderFor(RestClientAdapter.create(restClient))
         .build()
         .createClient(ApiExchange.class);
   }
 
-  private RestClient buildRestClient() {
+  private RestClient buildRestClient(ApiProperties apiProperties) {
     return RestClient.builder()
-        .baseUrl(baseUrl)
-        .defaultHeader(AUTH_SCHEMA_HEADER, authSchema)
-        .defaultHeader(API_KEY_HEADER, apiKey)
+        .baseUrl(apiProperties.getBaseUrl())
+        .defaultHeader(AUTH_SCHEMA_HEADER, apiProperties.getAuthSchema())
+        .defaultHeader(API_KEY_HEADER, apiProperties.getKey())
         .build();
   }
 }
