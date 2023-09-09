@@ -1,5 +1,6 @@
 package it.nave.fabrickapitest.service;
 
+import it.nave.fabrickapitest.mapper.TransferMapper;
 import it.nave.fabrickapitest.exchange.ApiExchange;
 import it.nave.fabrickapitest.model.*;
 import java.time.LocalDate;
@@ -10,9 +11,11 @@ import org.springframework.stereotype.Service;
 public class ApiService {
 
   private final ApiExchange apiExchange;
+  private final TransferMapper transferMapper;
 
-  public ApiService(ApiExchange apiExchange) {
+  public ApiService(ApiExchange apiExchange, TransferMapper transferMapper) {
     this.apiExchange = apiExchange;
+    this.transferMapper = transferMapper;
   }
 
   public Balance balance(long accountId) {
@@ -28,14 +31,7 @@ public class ApiService {
   }
 
   public TransferResponse transfer(long accountId, TransferRequest transferRequest) {
-    var creditor = new Creditor();
-    creditor.setName(transferRequest.getReceiverName());
-    var request = new TransferRequestApi();
-    request.setCreditor(creditor);
-    request.setDescription(transferRequest.getDescription());
-    request.setCurrency(transferRequest.getCurrency());
-    request.setAmount(transferRequest.getAmount());
-    request.setExecutionDate(transferRequest.getExecutionDate());
-    return apiExchange.transfer(accountId, request).getPayload();
+    var apiRequest = transferMapper.toApi(transferRequest);
+    return apiExchange.transfer(accountId, apiRequest).getPayload();
   }
 }
