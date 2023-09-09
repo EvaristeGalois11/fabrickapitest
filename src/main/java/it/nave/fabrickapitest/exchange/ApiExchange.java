@@ -1,14 +1,13 @@
 package it.nave.fabrickapitest.exchange;
 
-import it.nave.fabrickapitest.model.Balance;
-import it.nave.fabrickapitest.model.BaseResponse;
-import it.nave.fabrickapitest.model.ListHolder;
-import it.nave.fabrickapitest.model.Transaction;
+import it.nave.fabrickapitest.model.*;
 import java.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.service.annotation.GetExchange;
+import org.springframework.web.service.annotation.PostExchange;
 
 public interface ApiExchange {
 
@@ -20,4 +19,8 @@ public interface ApiExchange {
       @PathVariable long accountId,
       @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate fromAccountingDate,
       @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate toAccountingDate);
+
+  @PostExchange(url = "/api/gbs/banking/v4.0/accounts/{accountId}/payments/money-transfers")
+  BaseResponse<TransferResponse> transfer(
+      @PathVariable long accountId, @RequestBody TransferRequestApi transferRequestApi);
 }

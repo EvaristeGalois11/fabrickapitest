@@ -2,6 +2,8 @@ package it.nave.fabrickapitest.controller;
 
 import it.nave.fabrickapitest.model.Balance;
 import it.nave.fabrickapitest.model.Transaction;
+import it.nave.fabrickapitest.model.TransferRequest;
+import it.nave.fabrickapitest.model.TransferResponse;
 import it.nave.fabrickapitest.service.ApiService;
 import java.time.LocalDate;
 import java.util.List;
@@ -31,5 +33,11 @@ public class ApiController {
       @RequestParam(defaultValue = "2019-12-01") @DateTimeFormat(pattern = "yyyy-MM-dd")
           LocalDate toAccountingDate) {
     return apiService.transactions(accountId, fromAccountingDate, toAccountingDate);
+  }
+
+  @PostMapping(path = "account/{accountId}/transfer")
+  public TransferResponse createTransfer(
+      @PathVariable long accountId, @RequestBody TransferRequest transferRequest) {
+    return apiService.transfer(accountId, transferRequest);
   }
 }
