@@ -1,4 +1,4 @@
-package it.nave.fabrickapitest.controller.model;
+package it.nave.fabrickapitest.model;
 
 public class Error {
   private String code;

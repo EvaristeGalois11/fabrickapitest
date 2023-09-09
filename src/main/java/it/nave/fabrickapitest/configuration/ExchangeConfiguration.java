@@ -1,6 +1,6 @@
-package it.nave.fabrickapitest.controller.configuration;
+package it.nave.fabrickapitest.configuration;
 
-import it.nave.fabrickapitest.controller.exchange.ApiExchange;
+import it.nave.fabrickapitest.exchange.ApiExchange;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestClient;
