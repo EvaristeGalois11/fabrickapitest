@@ -11,6 +11,8 @@ import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 public class ExchangeConfiguration {
   private static final String AUTH_SCHEMA_HEADER = "Auth-Schema";
   private static final String API_KEY_HEADER = "Api-Key";
+  private static final String TIMEZONE_HEADER = "X-Time-Zone";
+  private static final String DEFAULT_TIMEZONE = "Europe/Rome";
 
   @Bean
   public ApiExchange apiExchange(ApiProperties apiProperties) {
@@ -25,6 +27,8 @@ public class ExchangeConfiguration {
         .baseUrl(apiProperties.getBaseUrl())
         .defaultHeader(AUTH_SCHEMA_HEADER, apiProperties.getAuthSchema())
         .defaultHeader(API_KEY_HEADER, apiProperties.getKey())
+        .defaultHeader(API_KEY_HEADER, apiProperties.getKey())
+        .defaultHeader(TIMEZONE_HEADER, DEFAULT_TIMEZONE)
         .build();
   }
 }
