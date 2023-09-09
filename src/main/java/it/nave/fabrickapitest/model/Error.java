@@ -1,9 +1,19 @@
 package it.nave.fabrickapitest.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Error {
   private String code;
   private String description;
   private String params;
+
+  public Error() {}
+
+  public Error(String code, String description) {
+    this.code = code;
+    this.description = description;
+  }
 
   public String getCode() {
     return code;
