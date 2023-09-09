@@ -9,21 +9,21 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "account")
-public class AccountController {
+@RequestMapping(path = "api")
+public class ApiController {
 
   private final ApiService apiService;
 
-  public AccountController(ApiService apiService) {
+  public ApiController(ApiService apiService) {
     this.apiService = apiService;
   }
 
-  @GetMapping(path = "{accountId}/balance")
+  @GetMapping(path = "account/{accountId}/balance")
   public Balance getBalance(@PathVariable long accountId) {
     return apiService.balance(accountId);
   }
 
-  @GetMapping(path = "{accountId}/transactions")
+  @GetMapping(path = "account/{accountId}/transactions")
   public List<Transaction> getBalance(
       @PathVariable long accountId,
       @RequestParam(defaultValue = "2019-01-01") @DateTimeFormat(pattern = "yyyy-MM-dd")
