@@ -26,7 +26,7 @@ public class ApiController {
   }
 
   @GetMapping(path = "account/{accountId}/transactions")
-  public List<Transaction> getBalance(
+  public List<Transaction> getTransactions(
       @PathVariable long accountId,
       @RequestParam(defaultValue = "2019-01-01") @DateTimeFormat(pattern = "yyyy-MM-dd")
           LocalDate fromAccountingDate,
