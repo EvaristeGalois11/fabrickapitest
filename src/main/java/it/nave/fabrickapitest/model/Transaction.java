@@ -1,7 +1,6 @@
 package it.nave.fabrickapitest.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 

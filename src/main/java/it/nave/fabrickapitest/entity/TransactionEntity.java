@@ -10,13 +10,11 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "TRANSACTION")
 public class TransactionEntity {
-  @Id
-  private String transactionId;
+  @Id private String transactionId;
   private String operationId;
   private LocalDate accountingDate;
   private LocalDate valueDate;
-  @Embedded
-  private TransactionTypeEntity type;
+  @Embedded private TransactionTypeEntity type;
   private BigDecimal amount;
   private String currency;
   private String description;

@@ -7,6 +7,7 @@ import jakarta.persistence.Embeddable;
 public class TransactionTypeEntity {
   @Column(name = "TYPE_ENUMERATION")
   private String enumeration;
+
   @Column(name = "TYPE_VALUE")
   private String value;
 
