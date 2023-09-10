@@ -26,7 +26,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "TRANSACTION")
+@Table(name = "TRANSACTION_HISTORY")
 public class TransactionEntity {
   @Id private String transactionId;
   private String operationId;

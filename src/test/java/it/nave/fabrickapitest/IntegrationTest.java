@@ -18,14 +18,17 @@
  */
 package it.nave.fabrickapitest;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import java.lang.annotation.*;
+import org.junit.jupiter.api.Tag;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.annotation.AliasFor;
 
-@Disabled
-@SpringBootTest
-class FabrickApiTestApplicationTests {
-
-  @Test
-  void contextLoads() {}
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Inherited
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@Tag("integration")
+public @interface IntegrationTest {
+  @AliasFor(attribute = "properties", annotation = SpringBootTest.class)
+  String[] properties() default {};
 }

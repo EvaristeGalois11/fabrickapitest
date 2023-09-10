@@ -4,18 +4,18 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
     <changeSet id="0" author="Claudio Nave">
-        <createTable tableName="TRANSACTION">
-            <column name="TRANSACTION_ID" type="VARCHAR">
+        <createTable tableName="TRANSACTION_HISTORY">
+            <column name="TRANSACTION_ID" type="VARCHAR(500)">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="OPERATION_ID" type="VARCHAR"/>
+            <column name="OPERATION_ID" type="VARCHAR(500)"/>
             <column name="ACCOUNTING_DATE" type="DATE"/>
             <column name="VALUE_DATE" type="DATE"/>
-            <column name="TYPE_ENUMERATION" type="VARCHAR"/>
-            <column name="TYPE_VALUE" type="VARCHAR"/>
+            <column name="TYPE_ENUMERATION" type="VARCHAR(500)"/>
+            <column name="TYPE_VALUE" type="VARCHAR(500)"/>
             <column name="AMOUNT" type="DECIMAL"/>
-            <column name="CURRENCY" type="VARCHAR"/>
-            <column name="DESCRIPTION" type="VARCHAR"/>
+            <column name="CURRENCY" type="VARCHAR(500)"/>
+            <column name="DESCRIPTION" type="VARCHAR(500)"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>
