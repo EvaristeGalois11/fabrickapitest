@@ -1,21 +1,22 @@
-package it.nave.fabrickapitest.model;
+package it.nave.fabrickapitest.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Transaction {
+@Entity
+@Table(name = "TRANSACTION")
+public class TransactionEntity {
+  @Id
   private String transactionId;
   private String operationId;
-
-  @JsonFormat(pattern = "yyyy-MM-dd")
   private LocalDate accountingDate;
-
-  @JsonFormat(pattern = "yyyy-MM-dd")
   private LocalDate valueDate;
-
-  private TransactionType type;
+  @Embedded
+  private TransactionTypeEntity type;
   private BigDecimal amount;
   private String currency;
   private String description;
@@ -52,11 +53,11 @@ public class Transaction {
     this.valueDate = valueDate;
   }
 
-  public TransactionType getType() {
+  public TransactionTypeEntity getType() {
     return type;
   }
 
-  public void setType(TransactionType type) {
+  public void setType(TransactionTypeEntity type) {
     this.type = type;
   }
 

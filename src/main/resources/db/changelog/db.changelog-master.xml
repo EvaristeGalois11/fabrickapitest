@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="0" author="Claudio Nave">
+        <createTable tableName="TRANSACTION">
+            <column name="TRANSACTION_ID" type="VARCHAR">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="OPERATION_ID" type="VARCHAR"/>
+            <column name="ACCOUNTING_DATE" type="DATE"/>
+            <column name="VALUE_DATE" type="DATE"/>
+            <column name="TYPE_ENUMERATION" type="VARCHAR"/>
+            <column name="TYPE_VALUE" type="VARCHAR"/>
+            <column name="AMOUNT" type="DECIMAL"/>
+            <column name="CURRENCY" type="VARCHAR"/>
+            <column name="DESCRIPTION" type="VARCHAR"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
