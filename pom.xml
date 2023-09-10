@@ -131,6 +131,9 @@
                         <importOrder/>
                         <removeUnusedImports/>
                         <formatAnnotations/>
+                        <licenseHeader>
+                            <file>${project.basedir}/etc/license-header</file>
+                        </licenseHeader>
                     </java>
                 </configuration>
             </plugin>

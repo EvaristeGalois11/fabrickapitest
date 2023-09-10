@@ -1,5 +1,5 @@
 /*
- *Copyright (C) 2023 Claudio Nave
+ *Copyright (C) $YEAR Claudio Nave
  *
  *This file is part of fabrickapitest.
  *
@@ -16,32 +16,3 @@
  *You should have received a copy of the GNU General Public License
  *along with fabrickapitest. If not, see <https://www.gnu.org/licenses/>.
  */
-package it.nave.fabrickapitest.entity;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
-
-@Embeddable
-public class TransactionTypeEntity {
-  @Column(name = "TYPE_ENUMERATION")
-  private String enumeration;
-
-  @Column(name = "TYPE_VALUE")
-  private String value;
-
-  public String getEnumeration() {
-    return enumeration;
-  }
-
-  public void setEnumeration(String enumeration) {
-    this.enumeration = enumeration;
-  }
-
-  public String getValue() {
-    return value;
-  }
-
-  public void setValue(String value) {
-    this.value = value;
-  }
-}
