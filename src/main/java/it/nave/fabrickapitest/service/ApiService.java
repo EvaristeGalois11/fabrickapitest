@@ -14,10 +14,15 @@ public class ApiService {
 
   private final ApiExchange apiExchange;
   private final TransferMapper transferMapper;
+  private final TransactionService transactionService;
 
-  public ApiService(ApiExchange apiExchange, TransferMapper transferMapper) {
+  public ApiService(
+      ApiExchange apiExchange,
+      TransferMapper transferMapper,
+      TransactionService transactionService) {
     this.apiExchange = apiExchange;
     this.transferMapper = transferMapper;
+    this.transactionService = transactionService;
   }
 
   public Balance balance(long accountId) {
@@ -26,10 +31,13 @@ public class ApiService {
 
   public List<Transaction> transactions(
       long accountId, LocalDate fromAccountingDate, LocalDate toAccountingDate) {
-    return apiExchange
-        .transactions(accountId, fromAccountingDate, toAccountingDate)
-        .getPayload()
-        .getList();
+    var transactions =
+        apiExchange
+            .transactions(accountId, fromAccountingDate, toAccountingDate)
+            .getPayload()
+            .getList();
+    transactionService.storeTransaction(transactions);
+    return transactions;
   }
 
   public TransferResponse transfer(long accountId, TransferRequest transferRequest) {
