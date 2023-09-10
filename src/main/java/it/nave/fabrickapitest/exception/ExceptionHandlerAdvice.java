@@ -1,6 +1,5 @@
-package it.nave.fabrickapitest.controller;
+package it.nave.fabrickapitest.exception;
 
-import it.nave.fabrickapitest.exception.ApiException;
 import it.nave.fabrickapitest.model.Error;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
