@@ -21,6 +21,7 @@
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <springdoc.version>2.2.0</springdoc.version>
         <wiremock.version>3.0.4</wiremock.version>
+        <instancio.version>3.0.1</instancio.version>
         <spotless-maven-plugin.version>2.39.0</spotless-maven-plugin.version>
         <jib-maven-plugin.version>3.3.2</jib-maven-plugin.version>
     </properties>
@@ -101,8 +102,15 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-server</artifactId>
+            <groupId>org.instancio</groupId>
+            <artifactId>instancio-junit</artifactId>
+            <version>${instancio.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
