@@ -33,7 +33,7 @@ public interface ApiExchange {
   BaseResponse<Balance> balance(@PathVariable long accountId);
 
   @GetExchange(url = "api/gbs/banking/v4.0/accounts/{accountId}/transactions")
-  BaseResponse<ListHolder<Transaction>> transactions(
+  ListResponse<Transaction> transactions(
       @PathVariable long accountId,
       @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate fromAccountingDate,
       @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate toAccountingDate);
