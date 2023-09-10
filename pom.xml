@@ -12,7 +12,7 @@
 
     <groupId>it.nave</groupId>
     <artifactId>fabrick-api-test</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>fabrick-api-test</name>
     <description>fabrick-api-test</description>
 
@@ -21,6 +21,7 @@
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <springdoc.version>2.2.0</springdoc.version>
         <spotless-maven-plugin.version>2.35.0</spotless-maven-plugin.version>
+        <jib-maven-plugin.version>3.3.2</jib-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -131,6 +132,27 @@
                         <removeUnusedImports/>
                         <formatAnnotations/>
                     </java>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>${jib-maven-plugin.version}</version>
+                <configuration>
+                    <from>
+                        <image>eclipse-temurin:20-jre-alpine</image>
+                    </from>
+                    <to>
+                        <image>ghcr.io/evaristegalois11/fabrickapitest</image>
+                        <tags>
+                            <tag>${project.version}</tag>
+                            <tag>latest</tag>
+                        </tags>
+                    </to>
+                    <container>
+                        <format>OCI</format>
+                        <user>nobody</user>
+                    </container>
                 </configuration>
             </plugin>
         </plugins>
