@@ -20,6 +20,7 @@
         <java.version>20</java.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <springdoc.version>2.2.0</springdoc.version>
+        <wiremock.version>3.0.4</wiremock.version>
         <spotless-maven-plugin.version>2.39.0</spotless-maven-plugin.version>
         <jib-maven-plugin.version>3.3.2</jib-maven-plugin.version>
     </properties>
@@ -92,6 +93,16 @@
             <groupId>org.testcontainers</groupId>
             <artifactId>oracle-xe</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.wiremock</groupId>
+            <artifactId>wiremock-standalone</artifactId>
+            <version>${wiremock.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
         </dependency>
     </dependencies>
 
