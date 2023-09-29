@@ -22,7 +22,7 @@
         <springdoc.version>2.2.0</springdoc.version>
         <wiremock.version>3.2.0</wiremock.version>
         <instancio.version>3.3.0</instancio.version>
-        <spotless-maven-plugin.version>2.39.0</spotless-maven-plugin.version>
+        <spotless-maven-plugin.version>2.40.0</spotless-maven-plugin.version>
         <jib-maven-plugin.version>3.4.0</jib-maven-plugin.version>
     </properties>
 
