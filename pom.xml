@@ -21,7 +21,7 @@
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <springdoc.version>2.2.0</springdoc.version>
         <wiremock.version>3.2.0</wiremock.version>
-        <instancio.version>3.3.1</instancio.version>
+        <instancio.version>3.3.2</instancio.version>
         <spotless-maven-plugin.version>2.40.0</spotless-maven-plugin.version>
         <jib-maven-plugin.version>3.4.0</jib-maven-plugin.version>
     </properties>
