@@ -17,7 +17,7 @@
     <description>fabrick-api-test</description>
 
     <properties>
-        <java.version>20</java.version>
+        <java.version>21</java.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <springdoc.version>2.2.0</springdoc.version>
         <wiremock.version>3.3.1</wiremock.version>
@@ -166,7 +166,7 @@
                 <version>${jib-maven-plugin.version}</version>
                 <configuration>
                     <from>
-                        <image>eclipse-temurin:20-jre-alpine</image>
+                        <image>eclipse-temurin:21-jre-alpine</image>
                     </from>
                     <to>
                         <image>ghcr.io/evaristegalois11/fabrickapitest</image>

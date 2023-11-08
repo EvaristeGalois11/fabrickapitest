@@ -7,7 +7,7 @@ Just a simple demo project to test some fabrick apis
 ### Build from source
 `./mvnw verify`
 
-**_The project needs Java 20 to compile_**
+**_The project needs Java 21 to compile_**
 
 ### Run with podman
 `podman run -d -p 8080:8080 ghcr.io/evaristegalois11/fabrickapitest`
