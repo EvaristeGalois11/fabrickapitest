@@ -18,5 +18,5 @@
  */
 package it.nave.fabrickapitest;
 
-@IntegrationTest(properties = "spring.datasource.url=jdbc:tc:postgresql:15:///fabrickapitest")
+@IntegrationTest(properties = "spring.datasource.url=jdbc:tc:postgresql:16:///fabrickapitest")
 class PostgresFabrickApiTestIT extends FabrickApiTestIT {}
