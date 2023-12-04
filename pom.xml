@@ -19,7 +19,7 @@
     <properties>
         <java.version>21</java.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
-        <springdoc.version>2.2.0</springdoc.version>
+        <springdoc.version>2.3.0</springdoc.version>
         <wiremock.version>3.3.1</wiremock.version>
         <instancio.version>3.6.0</instancio.version>
         <spotless-maven-plugin.version>2.41.1</spotless-maven-plugin.version>
