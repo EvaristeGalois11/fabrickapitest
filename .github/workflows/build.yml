@@ -24,6 +24,6 @@ jobs:
         run: ./mvnw -B install -DskipTests
 
       - name: 'Prepare Sonar analysis'
-        uses: evaristegalois11/sonar-fork-action@master
+        uses: evaristegalois11/sonar-fork-analysis@master
         with:
           phase: prepare
