@@ -25,3 +25,5 @@ jobs:
 
       - name: 'Prepare Sonar analysis'
         uses: evaristegalois11/sonar-fork-action@master
+        with:
+          phase: prepare
