@@ -18,3 +18,5 @@ jobs:
           distribution: temurin
           java-version: 21
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          sonar-token: ${{ secrets.SONAR_TOKEN }}
+          project-key: 'EvaristeGalois11_fabrickapitest'
