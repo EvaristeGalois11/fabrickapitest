@@ -1,6 +1,6 @@
-[![Build](https://github.com/EvaristeGalois11/fabrickapitest/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/EvaristeGalois11/fabrickapitest/actions/workflows/build.yml)
-[![Deploy](https://github.com/EvaristeGalois11/fabrickapitest/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/EvaristeGalois11/fabrickapitest/actions/workflows/deploy.yml)
-[![Sonar](https://github.com/EvaristeGalois11/fabrickapitest/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/EvaristeGalois11/fabrickapitest/actions/workflows/sonar.yml)
+[![Build](https://github.com/EvaristeGalois11/fabrickapitest/actions/workflows/build.yml/badge.svg)](https://github.com/EvaristeGalois11/fabrickapitest/actions/workflows/build.yml)
+[![Deploy](https://github.com/EvaristeGalois11/fabrickapitest/actions/workflows/deploy.yml/badge.svg)](https://github.com/EvaristeGalois11/fabrickapitest/actions/workflows/deploy.yml)
+[![Sonar](https://github.com/EvaristeGalois11/fabrickapitest/actions/workflows/sonar.yml/badge.svg)](https://github.com/EvaristeGalois11/fabrickapitest/actions/workflows/sonar.yml)
 [![CodeQL](https://github.com/EvaristeGalois11/fabrickapitest/actions/workflows/codeql.yml/badge.svg)](https://github.com/EvaristeGalois11/fabrickapitest/actions/workflows/codeql.yml)
 
 # fabrickapitest
