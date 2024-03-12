@@ -6,6 +6,7 @@ on:
       - completed
 jobs:
   sonar:
+    name: 'Sonar analysis'
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     permissions:
