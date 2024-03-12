@@ -12,6 +12,13 @@ jobs:
       actions: write
       checks: write
     steps:
+      - name: 'Set up JDK 21'
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: maven
+
       - name: 'Execute Sonar analysis'
         uses: evaristegalois11/sonar-fork-analysis@master
         env:
