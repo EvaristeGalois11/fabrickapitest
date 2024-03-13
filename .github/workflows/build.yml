@@ -21,7 +21,7 @@ jobs:
           cache: maven
 
       - name: 'Build and test'
-        run: ./mvnw -B install -DskipTests
+        run: ./mvnw -B install
 
       - name: 'Prepare Sonar analysis'
         uses: evaristegalois11/sonar-fork-analysis@master
