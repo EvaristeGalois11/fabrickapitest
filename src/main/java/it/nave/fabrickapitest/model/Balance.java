@@ -26,7 +26,7 @@ public class Balance {
   @JsonFormat(pattern = "yyyy-MM-dd")
   private LocalDate date;
 
-  private BigDecimal balance;
+  private BigDecimal amount;
   private BigDecimal availableBalance;
   private String currency;
 
@@ -38,12 +38,12 @@ public class Balance {
     this.date = date;
   }
 
-  public BigDecimal getBalance() {
-    return balance;
+  public BigDecimal getAmount() {
+    return amount;
   }
 
-  public void setBalance(BigDecimal balance) {
-    this.balance = balance;
+  public void setAmount(BigDecimal amount) {
+    this.amount = amount;
   }
 
   public BigDecimal getAvailableBalance() {
