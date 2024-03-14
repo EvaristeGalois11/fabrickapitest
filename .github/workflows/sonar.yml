@@ -9,9 +9,6 @@ jobs:
     name: 'Sonar analysis'
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    permissions:
-      actions: write
-      checks: write
     steps:
       - name: 'Execute Sonar analysis'
         uses: evaristegalois11/sonar-fork-analysis@master
