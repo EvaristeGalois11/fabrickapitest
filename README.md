@@ -19,3 +19,4 @@ Postgres and Oracle are also supported: pass the jdbc url with the environment v
 
 ### Usage
 Head over to `http://localhost:8080/swagger-ui/index.html` to make use of the embedded swagger or just use `curl` to query the application directly.
+
